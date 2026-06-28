@@ -29,7 +29,7 @@ export function Logo({ size = "md", showText = true, className }: LogoProps) {
       {showText && (
         <div className="flex flex-col">
           <span className={cn("font-heading font-bold tracking-tight text-text-primary", text)}>
-            Nyay<span className="text-gold">Neti</span>
+            Case<span className="text-gold">Flow</span>
           </span>
           {size === "lg" && (
             <span className="text-xs text-text-secondary tracking-wide">

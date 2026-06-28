@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === "production";
 
-// GitHub Pages URL is case-sensitive — must match repo name exactly: "CaseFlow"
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (isProd ? "/CaseFlow" : "");
+// GitHub Pages URL is case-sensitive — must match repo name exactly.
+// The GitHub repository was created as "caseflow" (lowercase).
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (isProd ? "/caseflow" : "");
 
 const nextConfig: NextConfig = {
   output: "export",          // Static HTML export for GitHub Pages

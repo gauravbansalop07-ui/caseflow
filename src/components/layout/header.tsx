@@ -140,13 +140,13 @@ export function AppHeader() {
                 variant="ghost"
                 size="icon-sm"
                 className="relative text-text-secondary hover:text-text-primary"
-              />
+              >
+                <Bell size={16} />
+                {/* Notification dot */}
+                <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-gold" />
+              </Button>
             }
-          >
-            <Bell size={16} />
-            {/* Notification dot */}
-            <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-gold" />
-          </DropdownMenuTrigger>
+          />
           <DropdownMenuContent align="end" className="w-64 glass-strong border-glass-border">
             <DropdownMenuLabel>Notifications</DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-glass-border" />
@@ -171,25 +171,27 @@ export function AppHeader() {
         <DropdownMenu>
           <DropdownMenuTrigger
             render={
-              <Avatar size="sm" className="cursor-pointer hover:ring-2 hover:ring-gold/50 transition-all" />
+              <Avatar size="sm" className="cursor-pointer hover:ring-2 hover:ring-gold/50 transition-all">
+                <AvatarFallback className="bg-gold/20 text-gold text-xs font-semibold">
+                  DU
+                </AvatarFallback>
+              </Avatar>
             }
-          >
-            <AvatarFallback className="bg-gold/20 text-gold text-xs font-semibold">
-              DU
-            </AvatarFallback>
-          </DropdownMenuTrigger>
+          />
           <DropdownMenuContent align="end" className="w-56 glass-strong border-glass-border">
             <DropdownMenuLabel className="flex flex-col">
               <span>Demo User</span>
               <span className="text-xs font-normal text-text-muted">demo@caseflow.com</span>
             </DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-glass-border" />
-            <DropdownMenuItem className="cursor-pointer focus:bg-glass-hover" render={<Link href="/settings" />}>
-              Profile Settings
-            </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer focus:bg-glass-hover" render={<Link href="/settings" />}>
-              Billing Plan
-            </DropdownMenuItem>
+            <DropdownMenuItem 
+              className="cursor-pointer focus:bg-glass-hover" 
+              render={<Link href="/settings">Profile Settings</Link>} 
+            />
+            <DropdownMenuItem 
+              className="cursor-pointer focus:bg-glass-hover" 
+              render={<Link href="/settings">Billing Plan</Link>} 
+            />
             <DropdownMenuSeparator className="bg-glass-border" />
             <DropdownMenuItem className="cursor-pointer text-red-400 focus:bg-red-400/10 focus:text-red-400">
               Log out

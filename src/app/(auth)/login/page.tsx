@@ -50,7 +50,7 @@ export default function LoginPage() {
               <Input
                 type="email"
                 placeholder="you@example.com"
-                defaultValue="demo@nyayneti.com"
+                defaultValue="demo@caseflow.com"
                 className="pl-10 bg-white/5 border-glass-border text-text-primary placeholder:text-text-muted focus:border-gold/50"
               />
             </div>

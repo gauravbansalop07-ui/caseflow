@@ -56,7 +56,7 @@ export default function SettingsPage() {
             <div className="space-y-2">
               <Label className="text-text-secondary">Email</Label>
               <Input
-                defaultValue="demo@nyayneti.com"
+                defaultValue="demo@caseflow.com"
                 readOnly
                 className="bg-white/5 border-glass-border text-text-muted cursor-not-allowed"
               />

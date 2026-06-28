@@ -144,7 +144,7 @@ export default function MarketingLayout({
         <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4">
           <Logo size="sm" />
           <p className="text-sm text-text-muted">
-            © {new Date().getFullYear()} NyayNeti. All rights reserved.
+            © {new Date().getFullYear()} CaseFlow. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link

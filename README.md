@@ -1,12 +1,12 @@
-# CaseFlow (NyayNeti) — AI-Powered Indian Legal Research
+# CaseFlow — AI-Powered Indian Legal Research
 
 > Research Indian case law in seconds. Upload any judgment and instantly extract facts, legal issues, precedents, and AI-generated legal insights.
 
-[![Deploy to GitHub Pages](https://github.com/YOUR_USERNAME/caseflow/actions/workflows/deploy.yml/badge.svg)](https://github.com/YOUR_USERNAME/caseflow/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/gauravbansalop07-ui/CaseFlow/actions/workflows/deploy.yml/badge.svg)](https://github.com/gauravbansalop07-ui/CaseFlow/actions/workflows/deploy.yml)
 
 ## 🚀 Live Demo
 
-**[→ View on GitHub Pages](https://YOUR_USERNAME.github.io/caseflow)**
+**[→ View on GitHub Pages](https://gauravbansalop07-ui.github.io/CaseFlow)**
 
 ---
 

@@ -24,8 +24,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "NyayNeti — AI-Powered Indian Legal Research",
-    template: "%s | NyayNeti",
+    default: "CaseFlow — AI-Powered Indian Legal Research",
+    template: "%s | CaseFlow",
   },
   description:
     "Upload any Indian court judgment and instantly extract facts, legal issues, precedents, and AI-generated legal insights. Your AI-powered legal research assistant.",
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     "court judgments",
     "precedents",
     "legal brief",
-    "NyayNeti",
+    "CaseFlow",
   ],
-  authors: [{ name: "NyayNeti" }],
+  authors: [{ name: "CaseFlow" }],
   openGraph: {
-    title: "NyayNeti — Research Indian Case Law in Seconds",
+    title: "CaseFlow — Research Indian Case Law in Seconds",
     description:
       "Upload any judgment and instantly extract facts, legal issues, precedents, and AI-generated legal insights.",
     type: "website",

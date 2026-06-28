@@ -1,26 +1,310 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Shadcn base tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-heading: var(--font-geist-sans), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Shadcn sidebar */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  /* Shadcn chart */
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+
+  /* Shadcn core */
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Radii */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ========== CaseFlow Custom Tokens ========== */
+
+  /* CaseFlow Palette */
+  --color-navy-deep: #071B4A;
+  --color-navy: #102A68;
+  --color-navy-light: #1a3a7e;
+  --color-gold: #F6A623;
+  --color-gold-light: #f8b84d;
+  --color-gold-dark: #d48e1c;
+  --color-emerald: #28C76F;
+  --color-emerald-light: #48d488;
+
+  /* Glass & Glow */
+  --color-glass: rgba(255, 255, 255, 0.04);
+  --color-glass-hover: rgba(255, 255, 255, 0.08);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-border-hover: rgba(255, 255, 255, 0.15);
+  --color-glow-blue: rgba(16, 42, 104, 0.6);
+  --color-glow-gold: rgba(246, 166, 35, 0.15);
+
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
+
+  /* Font display */
+  --font-display: var(--font-geist-sans), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ========== CaseFlow Dark Theme (Default) ========== */
+:root {
+  --background: #071B4A;
+  --foreground: #FFFFFF;
+  --card: rgba(255, 255, 255, 0.04);
+  --card-foreground: #FFFFFF;
+  --popover: #0d2356;
+  --popover-foreground: #FFFFFF;
+  --primary: #F6A623;
+  --primary-foreground: #071B4A;
+  --secondary: #102A68;
+  --secondary-foreground: #FFFFFF;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: #94A3B8;
+  --accent: rgba(255, 255, 255, 0.08);
+  --accent-foreground: #FFFFFF;
+  --destructive: #ef4444;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #F6A623;
+  --chart-1: #F6A623;
+  --chart-2: #28C76F;
+  --chart-3: #3b82f6;
+  --chart-4: #a855f7;
+  --chart-5: #ec4899;
+  --radius: 0.75rem;
+  --sidebar: #060f2e;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #F6A623;
+  --sidebar-primary-foreground: #071B4A;
+  --sidebar-accent: rgba(255, 255, 255, 0.06);
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: #F6A623;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ========== CaseFlow Utilities ========== */
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Glows */
+.glow-blue {
+  box-shadow: 0 0 80px rgba(16, 42, 104, 0.5),
+              0 0 160px rgba(16, 42, 104, 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 60px rgba(246, 166, 35, 0.15),
+              0 0 120px rgba(246, 166, 35, 0.08);
+}
+
+.glow-gold-strong {
+  box-shadow: 0 0 30px rgba(246, 166, 35, 0.3),
+              0 0 60px rgba(246, 166, 35, 0.15);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 40px rgba(246, 166, 35, 0.3);
+}
+
+/* Gradients */
+.gradient-navy {
+  background: linear-gradient(135deg, #071B4A 0%, #102A68 50%, #071B4A 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #F6A623 0%, #f8b84d 50%, #d48e1c 100%);
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #F6A623, #fcd49a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated mesh gradient for hero */
+.mesh-gradient {
+  position: relative;
+  overflow: hidden;
+}
+
+.mesh-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(16, 42, 104, 0.6) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 70%, rgba(246, 166, 35, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(16, 42, 104, 0.3) 0%, transparent 70%);
+  animation: meshMove 20s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes meshMove {
+  0% { transform: scale(1) translate(0, 0); }
+  33% { transform: scale(1.05) translate(2%, -1%); }
+  66% { transform: scale(0.98) translate(-1%, 2%); }
+  100% { transform: scale(1.02) translate(1%, -1%); }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(2deg); }
+  66% { transform: translateY(6px) rotate(-1deg); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out 2s infinite;
+}
+
+.animate-float-slow {
+  animation: float 12s ease-in-out 1s infinite;
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Shimmer for loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Progress timeline connector */
+.timeline-connector {
+  position: relative;
+}
+
+.timeline-connector::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 2px;
+  height: 32px;
+  background: linear-gradient(to bottom, rgba(246, 166, 35, 0.4), transparent);
+  transform: translateX(-50%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid #F6A623;
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(246, 166, 35, 0.3);
+  color: #FFFFFF;
 }

@@ -1,4 +1,4 @@
-name: Deploy CaseFlow to GitHub Pages
+name: Deploy caseflow to GitHub Pages
 
 on:
   push:

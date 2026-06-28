@@ -1,4 +1,4 @@
-export const APP_NAME = "CaseFlow";
+export const APP_NAME = "caseflow";
 export const APP_TAGLINE = "Your AI-Powered Indian Legal Research Assistant";
 export const APP_DESCRIPTION =
   "Upload any judgment and instantly extract facts, legal issues, precedents, and AI-generated legal insights.";
